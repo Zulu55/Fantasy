@@ -1,0 +1,12 @@
+﻿@page "/countries/edit/{Id:int}"
+
+<h3>@Localizer["Edit"] @Localizer["Country"]</h3>
+
+@if (country is null)
+{
+    <Loading />
+}
+else
+{
+    <CountryForm @ref="countryForm" Country="country" OnValidSubmit="EditAsync" ReturnAction="Return" />
+}
