@@ -1,10 +1,10 @@
 ﻿@page "/countries"
 
 
-<h3>Paises</h3>
+<h3>@Localizer["Countries"]</h3>
 
 <div class="mb-3">
-    <a class="btn btn-primary" href="/countries/create">Nuevo País</a>
+    <a class="btn btn-primary" href="/countries/create">@Localizer["New"] @Localizer["Country"]</a>
 </div>
 
 <GenericList MyList="Countries">
@@ -12,7 +12,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>País</th>
+                    <th>@Localizer["Country"]</th>
                     <th></th>
                 </tr>
             </thead>
@@ -24,8 +24,8 @@
                             @country.Name
                         </td>
                         <td>
-                            <a class="btn btn-warning">Editar</a>
-                            <button class="btn btn-danger">Borrar</button>
+                            <a class="btn btn-warning">@Localizer["Edit"]</a>
+                            <button class="btn btn-danger">@Localizer["Delete"]</button>
                         </td>
                     </tr>
                 }
