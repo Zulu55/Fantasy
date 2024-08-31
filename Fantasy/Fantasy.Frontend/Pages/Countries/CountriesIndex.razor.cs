@@ -7,7 +7,7 @@ using Microsoft.Extensions.Localization;
 
 namespace Fantasy.Frontend.Pages.Countries;
 
-public partial class CounrtriesIndex
+public partial class CountriesIndex
 {
     [Inject] private IRepository Repository { get; set; } = null!;
     [Inject] private IStringLocalizer<Literals> Localizer { get; set; } = null!;
