@@ -6,9 +6,9 @@ namespace Fantasy.Backend.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class CountriesController : GenericController<Country>
+public class TeamsController : GenericController<Team>
 {
-    public CountriesController(IGenericUnitOfWork<Country> unitOfWork) : base(unitOfWork)
+    public TeamsController(IGenericUnitOfWork<Team> unitOfWork) : base(unitOfWork)
     {
     }
 }

@@ -186,4 +186,13 @@
   <data name="RecordCreatedOk" xml:space="preserve">
     <value>Record created successfully.</value>
   </data>
+  <data name="ERR001" xml:space="preserve">
+    <value>Record not found.</value>
+  </data>
+  <data name="ERR002" xml:space="preserve">
+    <value>Cannot be deleted because it has related records.</value>
+  </data>
+  <data name="ERR003" xml:space="preserve">
+    <value>The record you are trying to create already exists.</value>
+  </data>
 </root>

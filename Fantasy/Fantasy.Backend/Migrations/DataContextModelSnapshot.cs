@@ -39,7 +39,7 @@ namespace Fantasy.Backend.Migrations
                     b.HasIndex("Name")
                         .IsUnique();
 
-                    b.ToTable("Countries");
+                    b.ToTable("Countries", (string)null);
                 });
 
             modelBuilder.Entity("Fantasy.Shared.Entites.Team", b =>
@@ -66,7 +66,7 @@ namespace Fantasy.Backend.Migrations
                     b.HasIndex("CountryId", "Name")
                         .IsUnique();
 
-                    b.ToTable("Teams");
+                    b.ToTable("Teams", (string)null);
                 });
 
             modelBuilder.Entity("Fantasy.Shared.Entites.Team", b =>
