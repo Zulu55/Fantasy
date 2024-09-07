@@ -1,0 +1,12 @@
+﻿@page "/teams/edit/{Id:int}"
+
+<h3>@Localizer["Edit"] @Localizer["Team"]</h3>
+
+@if (teamDTO is null)
+{
+    <Loading />
+}
+else
+{
+    <TeamForm @ref="teamForm" TeamDTO="teamDTO" OnValidSubmit="EditAsync" ReturnAction="Return" />
+}

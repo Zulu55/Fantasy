@@ -1,0 +1,35 @@
+﻿<div class="mb-3">
+    <label class="form-label">@Label</label>
+    <div class="input-group">
+        <input type="text"
+               class="form-control"
+               placeholder="@Localizer["SelectFile"]"
+               readonly="readonly"
+               value="@fileName" />
+        <label class="input-group-btn">
+            <span class="btn btn-primary">
+                @Localizer["Search"]<InputFile OnChange="OnChange" class="d-none" accept=".jpg,.jpeg,.png" />
+            </span>
+        </label>
+    </div>
+</div>
+
+<div>
+    @if (imageBase64 is not null)
+    {
+        <div>
+            <div style="margin: 10px">
+                <img src="data:image/jpeg;base64,@imageBase64" style="height:200px;" />
+            </div>
+        </div>
+    }
+
+    @if (ImageURL is not null && ImageURL.StartsWith("http"))
+    {
+        <div>
+            <div style="margin: 10px">
+                <img src="@ImageURL" style="height:200px;" />
+            </div>
+        </div>
+    }
+</div>
