@@ -1,0 +1,36 @@
+﻿@page "/teams"
+
+<h3>@Localizer["Teams"]</h3>
+
+<div class="mb-3">
+    <a class="btn btn-primary" href="/countries/create">@Localizer["New"] @Localizer["Country"]</a>
+</div>
+
+<GenericList MyList="Teams">
+    <Body>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>@Localizer["Team"]</th>
+                    <th>@Localizer["Image"]</th>
+                    <th>@Localizer["Country"]</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var team in Teams!)
+                {
+                    <tr>
+                        <td>@team.Name</td>
+                        <td><img src="@team.ImageFull" style="width:90px;height:60px;" /></td>
+                        <td>@team.Country!.Name</td>
+                        <td>
+                            <a class="btn btn-warning" href="/countries/edit/@team.Id">@Localizer["Edit"]</a>
+                            <button class="btn btn-danger" @onclick=@(() => DeleteAsync(team))>@Localizer["Delete"]</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </Body>
+</GenericList>
