@@ -2,33 +2,39 @@
 
 <EditForm EditContext="editContext" OnValidSubmit="OnValidSubmit">
     <DataAnnotationsValidator />
-    <div class="mb-3">
-        <label>@Localizer["Team"]:</label>
-        <div>
-            <InputText class="form-control" @bind-Value="@TeamDTO.Name" />
-            <ValidationMessage For="@(() => TeamDTO.Name)" />
-        </div>
-    </div>
-    <div class="mb-3">
-        <label>@Localizer["Country"]:</label>
-        <div>
-            <select class="form-select" @bind="TeamDTO.CountryId">
-                <option value="0">@Localizer["SelectACountry"]</option>
-                @if (countries is not null)
-                {
-                    @foreach (var country in countries)
-                    {
-                        <option value="@country.Id">@country.Name</option>
-                    }
-                }
-            </select>
-            <ValidationMessage For="@(() => TeamDTO.CountryId)" />
-        </div>
-    </div>
-    <div class="mb-3">
+
+    <MudTextField Label="@Localizer["Team"]"
+                  @bind-Value="@TeamDTO.Name"
+                  For="@(() => TeamDTO.Name)"
+                  Class="mb-4" />
+
+    <MudAutocomplete T="Country"
+                     Label=@Localizer["Country"]
+                     Placeholder=@Localizer["SelectACountry"]
+                     SearchFunc="SearchCountry"
+                     Value="selectedCountry"
+                     ValueChanged="CountryChanged"
+                     ToStringFunc="@(e=> e==null?null : $"{e.Name}")">
+        <ItemTemplate Context="itemContext">
+            @itemContext.Name
+        </ItemTemplate>
+    </MudAutocomplete>
+
+    <div class="my-2">
         <InputImg Label=@Localizer["Image"] ImageSelected="ImageSelected" ImageURL="@imageUrl" />
     </div>
 
-    <button class="btn btn-primary" type="submit">@Localizer["SaveChanges"]</button>
-    <button class="btn btn-success" @onclick="ReturnAction">@Localizer["Return"]</button>
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.ArrowBack"
+               Color="Color.Info"
+               OnClick="ReturnAction">
+        @Localizer["Return"]
+    </MudButton>
+
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.Check"
+               Color="Color.Primary"
+               ButtonType="ButtonType.Submit">
+        @Localizer["SaveChanges"]
+    </MudButton>
 </EditForm>
