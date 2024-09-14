@@ -1,0 +1,24 @@
+﻿<div class="mb-2" style="display: flex; flex-wrap:wrap; align-items: center;">
+    <div>
+        <MudTextField @bind-Value="FilterValue"
+                      Placeholder=@Localizer["Search"]
+                      Adornment="Adornment.Start"
+                      AdornmentIcon="@Icons.Material.Filled.Search"
+                      IconSize="Size.Medium" 
+                      Class="mt-0" />
+    </div>
+    <div class="mx-1">
+        <MudButton Variant="Variant.Outlined"
+                   EndIcon="@Icons.Material.Filled.FilterList"
+                   Color="Color.Primary"
+                   @onclick="OnFilterApply">
+            @Localizer["Filter"]
+        </MudButton>
+        <MudButton Variant="Variant.Outlined"
+                   EndIcon="@Icons.Material.Filled.Delete"
+                   Color="Color.Error"
+                   @onclick="CleanFilter">
+            @Localizer["Clean"]
+        </MudButton>
+    </div>
+</div>

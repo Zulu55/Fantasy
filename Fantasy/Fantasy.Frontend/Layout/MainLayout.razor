@@ -1,18 +1,43 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <div class="sidebar">
+
+<MudThemeProvider IsDarkMode="_darkMode" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+<MudPopoverProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu"
+                       Color="Color.Inherit"
+                       Edge="Edge.Start"
+                       OnClick="@((e) => DrawerToggle())" />
+        <MudLink Href="/"
+                 Typo="Typo.h5"
+                 Class="ml-3"
+                 Color="Color.Inherit">
+            @Localizer["Title"]
+        </MudLink>
+        <MudSpacer />
+        <MudMenu Icon="@Icons.Material.Filled.Settings"
+                 Color="Color.Inherit"
+                 ActivationEvent="@MouseEvent.MouseOver"
+                 AnchorOrigin="Origin.BottomRight"
+                 TransformOrigin="Origin.TopRight">
+            @* <AuthLinks /> *@
+        </MudMenu>
+        <MudIconButton Icon="@_icon"
+                       Color="Color.Inherit"
+                       Edge="Edge.Start"
+                       OnClick="@((e) => DarkModeToggle())" />
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen"
+               ClipMode="DrawerClipMode.Always"
+               Elevation="2">
         <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">@Localizer["About"]</a>
-        </div>
-
-        <article class="content px-4">
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer MaxWidth="MaxWidth.Large" Style="margin-top: 3rem">
             @Body
-        </article>
-    </main>
-</div>
-
-
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>

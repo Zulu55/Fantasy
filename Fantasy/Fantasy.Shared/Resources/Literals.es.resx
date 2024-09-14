@@ -222,4 +222,22 @@
   <data name="SelectACountry" xml:space="preserve">
     <value>-- Selecciona un País --</value>
   </data>
+  <data name="RecordsNumber" xml:space="preserve">
+    <value>Número de Registros</value>
+  </data>
+  <data name="All" xml:space="preserve">
+    <value>Todos</value>
+  </data>
+  <data name="Filter" xml:space="preserve">
+    <value>Filtrar</value>
+  </data>
+  <data name="Clean" xml:space="preserve">
+    <value>Limpiar</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>Acciones</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
 </root>

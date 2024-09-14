@@ -1,0 +1,16 @@
+﻿<MudDialog>
+    <DialogContent>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <MudImage Src="images/question.png" Width="130" Class="mb-3" />
+        </div>
+        <MudText>@Message</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Check" Color="Color.Primary" OnClick="Accept" FullWidth="true">
+            @Localizer["Yes"]
+        </MudButton>
+        <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Cancel" Color="Color.Secondary" OnClick="Cancel" FullWidth="true">
+            @Localizer["No"]
+        </MudButton>
+    </DialogActions>
+</MudDialog>
