@@ -270,4 +270,28 @@
   <data name="NotAuthorized" xml:space="preserve">
     <value>No estas autorizado para ver este contenido...</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="LengthField" xml:space="preserve">
+    <value>El campo {0} debe tener entre {2} y {1} carácteres.</value>
+  </data>
+  <data name="PasswordAndConfirmationDifferent" xml:space="preserve">
+    <value>La contraseña y la confirmación no son iguales.</value>
+  </data>
+  <data name="PasswordConfirm" xml:space="preserve">
+    <value>Confirmación de contraseña</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Correo electrónico</value>
+  </data>
+  <data name="ValidEmail" xml:space="preserve">
+    <value>Debes ingresar un correo válido.</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>El campo {0} debe tener al menos {1} carácteres.</value>
+  </data>
+  <data name="ERR006" xml:space="preserve">
+    <value>Email o contraseña incorrectos.</value>
+  </data>
 </root>
