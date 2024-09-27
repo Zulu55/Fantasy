@@ -13,6 +13,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.8" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Extensions.Localization" Version="8.0.8" />
     <PackageReference Include="MudBlazor" Version="7.8.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.1.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
   </ItemGroup>
 

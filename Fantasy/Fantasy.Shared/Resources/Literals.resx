@@ -294,4 +294,28 @@
   <data name="ERR006" xml:space="preserve">
     <value>Incorrect email or password.</value>
   </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register as new user</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="NotUserYet" xml:space="preserve">
+    <value>Not a user yet? Register here</value>
+  </data>
+  <data name="LogoutConfirm" xml:space="preserve">
+    <value>Are you sure you want to log out?</value>
+  </data>
+  <data name="LogoutMessage" xml:space="preserve">
+    <value>If you log out, you will need to log back in to access your account.</value>
+  </data>
+  <data name="EditUserProfile" xml:space="preserve">
+    <value>Edit User Profile</value>
+  </data>
 </root>

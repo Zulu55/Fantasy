@@ -294,4 +294,28 @@
   <data name="ERR006" xml:space="preserve">
     <value>Email o contraseña incorrectos.</value>
   </data>
+  <data name="Hello" xml:space="preserve">
+    <value>Hola</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Cerrar Sesión</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Regitrarse como nuevo usuario</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Iniciar Sesión</value>
+  </data>
+  <data name="NotUserYet" xml:space="preserve">
+    <value>¿No eres usuario aún? Resgitrate aquí</value>
+  </data>
+  <data name="LogoutConfirm" xml:space="preserve">
+    <value>¿Estás seguro que deseas cerrar sesión?</value>
+  </data>
+  <data name="LogoutMessage" xml:space="preserve">
+    <value>Si cierras sesión, tendrás que volver a iniciar de nuevo para acceder a tu cuenta.</value>
+  </data>
+  <data name="EditUserProfile" xml:space="preserve">
+    <value>Editar Perfil de Usuario</value>
+  </data>
 </root>
