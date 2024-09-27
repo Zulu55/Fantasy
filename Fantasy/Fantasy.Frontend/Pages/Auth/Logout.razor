@@ -1,0 +1,11 @@
+﻿<MudDialog>
+    <DialogContent>
+        <MudText Typo="Typo.h5">@Localizer["LogoutConfirm"]</MudText>
+        <MudText Typo="Typo.body2">@Localizer["LogoutMessage"]</MudText>
+    </DialogContent>
+    <DialogActions>
+        <MudButton Variant="Variant.Outlined" Color="Color.Tertiary" OnClick="CancelAction">@Localizer["Cancel"]</MudButton>
+        <MudSpacer />
+        <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="LogoutActionAsync">@Localizer["Logout"]</MudButton>
+    </DialogActions>
+</MudDialog>

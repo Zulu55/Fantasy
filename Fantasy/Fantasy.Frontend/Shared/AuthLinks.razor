@@ -1,0 +1,31 @@
+﻿<AuthorizeView>
+    <Authorized>
+        <MudContainer Style="width: 18rem; margin-top: 2rem; margin-bottom: 2rem;">
+            @if (!string.IsNullOrEmpty(photoUser))
+            {
+                <MudContainer Class="d-flex justify-content-center mb-3">
+                    <MudBadge Color="Color.Success" Overlap="true" Bordered="true" Class="position-relative">
+                        <MudAvatar Size="Size.Large" Class="mb-3 mx-auto d-block">
+                            <MudImage Src="@photoUser"></MudImage>
+                        </MudAvatar>
+                    </MudBadge>
+                </MudContainer>
+            }
+            <MudText Typo="Typo.body1" Align="Align.Center">@Localizer["Hello"], @context.User.Identity!.Name</MudText>
+            <MudPaper Elevation="1" Class="d-flex justify-content-center align-content-center">
+                <MudStack Spacing="2">
+                    <MudButton Variant="Variant.Text" OnClick="EditAction">@Localizer["EditUserProfile"] <MudIcon Icon="@Icons.Material.Filled.Person" /> </MudButton>
+                    <MudButton Variant="Variant.Text" OnClick="ShowModalLogOut">@Localizer["Logout"] <MudIcon Icon="@Icons.Material.Filled.Login" /> </MudButton>
+                </MudStack>
+            </MudPaper>
+        </MudContainer>
+    </Authorized>
+    <NotAuthorized>
+        <MudContainer Style="width: 18rem; margin-top: 2rem; margin-bottom: 2rem;">
+            <MudStack Spacing="2">
+                <a href="/register" class="nav-link btn btn-link">@Localizer["Register"] <MudIcon Icon="@Icons.Material.Filled.HowToReg" /></a>
+                <MudMenuItem OnClick="ShowModalLogIn">@Localizer["Login"] <MudIcon Icon="@Icons.Material.Filled.Login" /> </MudMenuItem>
+            </MudStack>
+        </MudContainer>
+    </NotAuthorized>
+</AuthorizeView>

@@ -1,0 +1,35 @@
+﻿<MudDialog>
+    <DialogContent>
+        <EditForm Model="loginDTO" OnValidSubmit="LoginAsync">
+            <DataAnnotationsValidator />
+            <MudGrid Class="mb-4">
+                <MudItem xs="12" sm="12">
+                    <MudTextField Label="@Localizer["Email"]" @bind-Value="@loginDTO.Email" InputType="InputType.Email" />
+                    <ValidationMessage For="@(() => loginDTO.Email)" />
+                </MudItem>
+                <MudItem xs="12" sm="12">
+                    <MudTextField Label="@Localizer["Password"]" @bind-Value="@loginDTO.Password" InputType="InputType.Password" />
+                    <ValidationMessage For="@(() => loginDTO.Password)" />
+                </MudItem>
+            </MudGrid>
+            <MudGrid Class="mb-4">
+                <MudItem xs="12" sm="6" Class="d-flex justify-content-center">
+                    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Login" Color="Color.Primary" ButtonType="ButtonType.Submit" FullWidth="true">
+                        @Localizer["Login"]
+                    </MudButton>
+                </MudItem>
+                <MudItem xs="12" sm="6" Class="d-flex justify-content-center">
+                    <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Cancel" Color="Color.Error" OnClick="CloseModal" FullWidth="true">
+                        @Localizer["Cancel"]
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
+        </EditForm>
+    </DialogContent>
+    <DialogActions>
+        <MudItem xs="12" sm="12">
+            <MudLink Href="/Register" Underline="Underline.Always">@Localizer["NotUserYet"]</MudLink>
+        </MudItem>
+    </DialogActions>
+</MudDialog>
+
