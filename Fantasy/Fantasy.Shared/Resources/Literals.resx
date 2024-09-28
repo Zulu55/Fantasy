@@ -318,4 +318,19 @@
   <data name="EditUserProfile" xml:space="preserve">
     <value>Edit User Profile</value>
   </data>
+  <data name="ERR007" xml:space="preserve">
+    <value>You have exceeded the maximum number of attempts, your account is blocked, please try again in 5 minutes.</value>
+  </data>
+  <data name="ERR008" xml:space="preserve">
+    <value>The user has not been enabled, you must follow the instructions in the email sent to enable the user.</value>
+  </data>
+  <data name="ConfirmedEmailMessage" xml:space="preserve">
+    <value>Thank you for confirming your email, you can now log in to the system.</value>
+  </data>
+  <data name="ConfirmEmail" xml:space="preserve">
+    <value>Email confirmation</value>
+  </data>
+  <data name="ConfirmEmailMessage" xml:space="preserve">
+    <value>Press the button to confirm your account.</value>
+  </data>
 </root>

@@ -6,6 +6,12 @@ namespace Fantasy.Backend.Repositories.Interfaces;
 
 public interface IUsersRepository
 {
+    Task<User> GetUserAsync(Guid userId);
+
+    Task<string> GenerateEmailConfirmationTokenAsync(User user);
+
+    Task<IdentityResult> ConfirmEmailAsync(User user, string token);
+
     Task<SignInResult> LoginAsync(LoginDTO model);
 
     Task LogoutAsync();

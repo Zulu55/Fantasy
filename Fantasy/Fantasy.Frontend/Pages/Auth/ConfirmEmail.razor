@@ -1,0 +1,15 @@
+﻿@page "/api/accounts/ConfirmEmail"
+
+<MudPaper Class="confirmation-container p-4 shadow-sm">
+    <MudGrid>
+        <MudItem xs="12" Class="text-center mb-4">
+            <MudText Typo="Typo.h3">@Localizer["ConfirmEmail"]</MudText>
+        </MudItem>
+        <MudItem xs="12" Class="text-center mb-4">
+            <MudText Typo="Typo.body1">@Localizer["ConfirmEmailMessage"]</MudText>
+        </MudItem>
+        <MudItem xs="12" Class="text-center">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ConfirmAccountAsync">@Localizer["ConfirmEmail"]</MudButton>
+        </MudItem>
+    </MudGrid>
+</MudPaper>
