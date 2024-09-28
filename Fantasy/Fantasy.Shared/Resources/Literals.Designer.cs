@@ -88,6 +88,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrator Registration.
+        /// </summary>
+        public static string AdminRegister {
+            get {
+                return ResourceManager.GetString("AdminRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All.
         /// </summary>
         public static string All {
@@ -228,6 +237,15 @@ namespace Fantasy.Shared.Resources {
         public static string Email {
             get {
                 return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The email you entered already exists..
+        /// </summary>
+        public static string EmailAlreadyExists {
+            get {
+                return ResourceManager.GetString("EmailAlreadyExists", resourceCulture);
             }
         }
         
@@ -529,6 +547,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Phone Number.
+        /// </summary>
+        public static string PhoneNumber {
+            get {
+                return ResourceManager.GetString("PhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please wait....
         /// </summary>
         public static string PleaseWait {
@@ -637,6 +664,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your account has been created successfully. An email has been sent to you with instructions on how to activate your account..
+        /// </summary>
+        public static string SendEmailConfirmationMessage {
+            get {
+                return ResourceManager.GetString("SendEmailConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Soccer predictions app.
         /// </summary>
         public static string Subtitle {
@@ -678,6 +714,15 @@ namespace Fantasy.Shared.Resources {
         public static string User {
             get {
                 return ResourceManager.GetString("User", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Registration.
+        /// </summary>
+        public static string UserRegister {
+            get {
+                return ResourceManager.GetString("UserRegister", resourceCulture);
             }
         }
         

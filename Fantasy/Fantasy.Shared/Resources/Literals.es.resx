@@ -333,4 +333,19 @@
   <data name="ConfirmEmailMessage" xml:space="preserve">
     <value>Presione el botón para confirmar su cuenta.</value>
   </data>
+  <data name="AdminRegister" xml:space="preserve">
+    <value>Registro de Administrador</value>
+  </data>
+  <data name="UserRegister" xml:space="preserve">
+    <value>Registro de Usuario</value>
+  </data>
+  <data name="SendEmailConfirmationMessage" xml:space="preserve">
+    <value>Su cuenta ha sido creada con exito. Se te ha enviado un correo electrónico con las instrucciones para activar tu usuario.</value>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Número de teléfono</value>
+  </data>
+  <data name="EmailAlreadyExists" xml:space="preserve">
+    <value>El correo que ingresaste ya existe.</value>
+  </data>
 </root>
