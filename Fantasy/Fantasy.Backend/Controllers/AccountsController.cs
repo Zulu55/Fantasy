@@ -29,6 +29,24 @@ public class AccountsController : ControllerBase
         _context = context;
     }
 
+    [HttpPost("ResedToken")]
+    public async Task<IActionResult> ResedTokenAsync([FromBody] EmailDTO model)
+    {
+        var user = await _usersUnitOfWork.GetUserAsync(model.Email);
+        if (user == null)
+        {
+            return NotFound();
+        }
+
+        var response = await SendConfirmationEmailAsync(user, model.Language);
+        if (response.WasSuccess)
+        {
+            return NoContent();
+        }
+
+        return BadRequest(response.Message);
+    }
+
     [HttpPost("CreateUser")]
     public async Task<IActionResult> CreateUser([FromBody] UserDTO model)
     {
@@ -98,7 +116,7 @@ public class AccountsController : ControllerBase
         return BadRequest("ERR006");
     }
 
-    public async Task<ActionResponse<string>> SendConfirmationEmailAsync(User user, string language)
+    private async Task<ActionResponse<string>> SendConfirmationEmailAsync(User user, string language)
     {
         var myToken = await _usersUnitOfWork.GenerateEmailConfirmationTokenAsync(user);
         var tokenLink = Url.Action("ConfirmEmail", "accounts", new

@@ -1,0 +1,19 @@
+﻿@if (loading)
+{
+    <Loading />
+}
+else
+{
+    <MudDialog>
+        <DialogContent>
+            <EditForm Model="emailDTO" OnValidSubmit="ResendConfirmationEmailTokenAsync">
+                <DataAnnotationsValidator />
+                <MudTextField Label=@Localizer["Email"] @bind-Value="@emailDTO.Email" InputType="InputType.Email" Class="mb-3" />
+                <ValidationMessage For="@(() => emailDTO.Email)" />
+                <MudButton Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.Send" Color="Color.Primary" ButtonType="ButtonType.Submit" FullWidth="true">
+                    @Localizer["Send"]
+                </MudButton>
+            </EditForm>
+        </DialogContent>
+    </MudDialog>
+}

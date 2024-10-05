@@ -348,4 +348,13 @@
   <data name="EmailAlreadyExists" xml:space="preserve">
     <value>El correo que ingresaste ya existe.</value>
   </data>
+  <data name="Send" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="MailForwarding" xml:space="preserve">
+    <value>Reenvío de correo</value>
+  </data>
+  <data name="ResendAccountActivationEmail" xml:space="preserve">
+    <value>Reenviar correro de activación de cuenta</value>
+  </data>
 </root>

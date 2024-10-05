@@ -28,6 +28,12 @@ public partial class Login
         MudDialog.Cancel();
     }
 
+    private void ShowModalResendConfirmationEmail()
+    {
+        var closeOnEscapeKey = new DialogOptions() { CloseOnEscapeKey = true, CloseButton = true, MaxWidth = MaxWidth.ExtraLarge };
+        DialogService.Show<ResendConfirmationEmailToken>(Localizer["MailForwarding"], closeOnEscapeKey);
+    }
+
     private async Task LoginAsync()
     {
         if (wasClose)
