@@ -1,0 +1,68 @@
+﻿@page "/EditUser"
+
+@if (loading)
+{
+    <Loading />
+}
+else
+{
+    <MudCard Class="p-4">
+        <MudItem>
+            <MudText Typo="Typo.h5">@Localizer["EditUserProfile"]</MudText>
+        </MudItem>
+        <EditForm Model="user" OnValidSubmit="SaveUserAsync">
+            <DataAnnotationsValidator />
+            <MudGrid>
+                <MudItem xs="12" sm="6">
+                    <MudCardContent>
+                        <MudTextField Label="@Localizer["FirstName"]"
+                                      @bind-Value="user!.FirstName"
+                                      For="@(() => user!.FirstName)" />
+                        <MudTextField Label="@Localizer["LastName"]"
+                                      @bind-Value="user.LastName"
+                                      For="@(() => user.LastName)" />
+                        <MudTextField Label="@Localizer["PhoneNumber"]"
+                                      @bind-Value="user.PhoneNumber"
+                                      For="@(() => user.PhoneNumber)"
+                                      InputType="InputType.Telephone" />
+                    </MudCardContent>
+                </MudItem>
+                <MudItem xs="12" sm="6">
+                    <MudCardContent>
+                        <MudAutocomplete T="Country"
+                                         Label=@Localizer["Country"]
+                                         Placeholder=@Localizer["SelectACountry"]
+                                         SearchFunc="SearchCountries"
+                                         Value="selectedCountry"
+                                         ValueChanged="CountryChanged"
+                                         ToStringFunc="@(e=> e==null?null : $"{e.Name}")">
+                            <ItemTemplate Context="itemContext">
+                                @itemContext.Name
+                            </ItemTemplate>
+                        </MudAutocomplete>
+                    </MudCardContent>
+                    <MudItem xs="12" sm="6">
+                        <InputImg Label=@Localizer["Image"] ImageSelected="ImageSelected" ImageURL="@imageUrl" />
+                    </MudItem>
+                </MudItem>
+                <MudGrid Justify="Justify.Center" Class="mt-4">
+                    <MudItem>
+                        <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.Check" Color="Color.Primary" OnClick="SaveUserAsync">
+                            @Localizer["SaveChanges"]
+                        </MudButton>
+                    </MudItem>
+                    <MudItem>
+                        <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.LockReset" Color="Color.Secondary" OnClick="ShowModal">
+                            @Localizer["ChangePassword"]
+                        </MudButton>
+                    </MudItem>
+                    <MudItem>
+                        <MudButton Variant="Variant.Outlined" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Info" OnClick="ReturnAction">
+                            @Localizer["Return"]
+                        </MudButton>
+                    </MudItem>
+                </MudGrid>
+            </MudGrid>
+        </EditForm>
+    </MudCard>
+}

@@ -357,4 +357,16 @@
   <data name="ResendAccountActivationEmail" xml:space="preserve">
     <value>Reenviar correro de activación de cuenta</value>
   </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Contraseña Actual</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Nueva Contraseña</value>
+  </data>
+  <data name="PasswordChangedSuccessfully" xml:space="preserve">
+    <value>Contraseña Modificada con éxito.</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Cambiar Contraseña</value>
+  </data>
 </root>

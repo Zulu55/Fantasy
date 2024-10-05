@@ -6,6 +6,10 @@ namespace Fantasy.Backend.UnitsOfWork.Interfaces;
 
 public interface IUsersUnitOfWork
 {
+    Task<IdentityResult> ChangePasswordAsync(User user, string currentPassword, string newPassword);
+
+    Task<IdentityResult> UpdateUserAsync(User user);
+
     Task<User> GetUserAsync(Guid userId);
 
     Task<string> GenerateEmailConfirmationTokenAsync(User user);
