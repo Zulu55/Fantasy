@@ -22,6 +22,12 @@ public partial class Login
 
     [CascadingParameter] private MudDialogInstance MudDialog { get; set; } = null!;
 
+    private void ShowModalRecoverPassword()
+    {
+        var closeOnEscapeKey = new DialogOptions() { CloseOnEscapeKey = true, MaxWidth = MaxWidth.ExtraLarge };
+        DialogService.Show<RecoverPassword>(Localizer["PasswordRecovery"], closeOnEscapeKey);
+    }
+
     private void CloseModal()
     {
         wasClose = true;

@@ -369,4 +369,16 @@
   <data name="ChangePassword" xml:space="preserve">
     <value>Cambiar Contraseña</value>
   </data>
+  <data name="RecoverPasswordMessage" xml:space="preserve">
+    <value>Se te ha enviado un correo electrónico con las instrucciones para recuperar su contraseña.</value>
+  </data>
+  <data name="PasswordRecoveredMessage" xml:space="preserve">
+    <value>Contraseña cambiada con éxito, ahora puede ingresar con su nueva contraseña.</value>
+  </data>
+  <data name="PasswordRecovery" xml:space="preserve">
+    <value>Recuperación de Contraseña</value>
+  </data>
+  <data name="ForgottenYourPassword" xml:space="preserve">
+    <value>¿Has olvidado tu contraseña?</value>
+  </data>
 </root>

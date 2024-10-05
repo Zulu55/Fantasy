@@ -27,17 +27,16 @@
         </EditForm>
     </DialogContent>
     <DialogActions>
-        <MudStack Spacing="2" Style="padding: 2rem;">
-            <MudItem xs="12" sm="12">
-                <MudLink Href="/Register" Underline="Underline.Always" Style="display: block; text-align: center;">
-                    @Localizer["NotUserYet"]
-                </MudLink>
-            </MudItem>
-            <MudItem xs="12" sm="12">
-                <MudLink OnClick="ShowModalResendConfirmationEmail" Underline="Underline.Always" Style="display: block; text-align: center;">
-                    @Localizer["ResendAccountActivationEmail"]
-                </MudLink>
-            </MudItem>
+        <MudStack Spacing="2" AlignItems="AlignItems.Center" Justify="Justify.Center">
+            <MudLink Href="/Register" Underline="Underline.Always" Color="Color.Info" Class="mt-4">
+                @Localizer["NotUserYet"]
+            </MudLink>
+            <MudLink OnClick="ShowModalRecoverPassword" Underline="Underline.Always" Color="Color.Secondary">
+                @Localizer["ForgottenYourPassword"]
+            </MudLink>
+            <MudLink OnClick="ShowModalResendConfirmationEmail" Underline="Underline.Always" Color="Color.Warning">
+                @Localizer["ResendAccountActivationEmail"]
+            </MudLink>
         </MudStack>
     </DialogActions>
 </MudDialog>
