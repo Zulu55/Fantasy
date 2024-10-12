@@ -88,6 +88,24 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Team.
+        /// </summary>
+        public static string AddTeam {
+            get {
+                return ResourceManager.GetString("AddTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Team To Tournament.
+        /// </summary>
+        public static string AddTeamToTournament {
+            get {
+                return ResourceManager.GetString("AddTeamToTournament", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string Admin {

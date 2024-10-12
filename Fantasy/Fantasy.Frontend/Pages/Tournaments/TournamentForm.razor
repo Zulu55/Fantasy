@@ -1,0 +1,43 @@
+﻿<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+
+<EditForm EditContext="editContext" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+
+    <MudTextField Label="@Localizer["Tournament"]"
+                  @bind-Value="@TournamentDTO.Name"
+                  For="@(() => TournamentDTO.Name)"
+                  Class="mb-4" />
+
+    <MudTextField Label="@Localizer["Remarks"]"
+                  @bind-Value="@TournamentDTO.Remarks"
+                  For="@(() => TournamentDTO.Remarks)"
+                  Class="mb-4"
+                  Lines="5" />
+
+    <MudToggleIconButton Toggled="TournamentDTO.IsActive"
+                         ToggledChanged="OnToggledChanged"
+                         Icon="@Icons.Material.Filled.Cancel"
+                         Color="@Color.Error"
+                         ToggledIcon="@Icons.Material.Filled.CheckCircle"
+                         ToggledColor="@Color.Success"
+                         title="@(TournamentDTO.IsActive ? @Localizer["Deactivate"] : @Localizer["Activate"])" />
+    <span>@isActiveMessage</span>
+
+    <div class="my-2">
+        <InputImg Label=@Localizer["Image"] ImageSelected="ImageSelected" ImageURL="@imageUrl" />
+    </div>
+
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.ArrowBack"
+               Color="Color.Info"
+               OnClick="ReturnAction">
+        @Localizer["Return"]
+    </MudButton>
+
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.Check"
+               Color="Color.Primary"
+               ButtonType="ButtonType.Submit">
+        @Localizer["SaveChanges"]
+    </MudButton>
+</EditForm>

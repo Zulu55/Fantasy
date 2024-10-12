@@ -408,4 +408,10 @@
   <data name="Deactivate" xml:space="preserve">
     <value>Desactivar</value>
   </data>
+  <data name="AddTeamToTournament" xml:space="preserve">
+    <value>Adicionar Equipo a Torneo</value>
+  </data>
+  <data name="AddTeam" xml:space="preserve">
+    <value>Adicionar Equipo</value>
+  </data>
 </root>

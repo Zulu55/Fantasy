@@ -24,7 +24,7 @@ public class TournamentsRepository : GenericRepository<Tournament>, ITournaments
     {
         var tournament = new Tournament
         {
-            IsActive = false,
+            IsActive = tournamentDTO.IsActive,
             Name = tournamentDTO.Name,
             Remarks = tournamentDTO.Remarks,
             TournamentTeams = []

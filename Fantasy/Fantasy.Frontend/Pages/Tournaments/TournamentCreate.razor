@@ -1,3 +1,8 @@
-﻿<h3>TournamentCreate</h3>
-
-
+﻿<MudDialog>
+    <DialogContent>
+        <TournamentForm @ref="tournamentForm" 
+                        TournamentDTO="tournamentDTO" 
+                        OnValidSubmit="CreateAsync" 
+                        ReturnAction="Return" />
+    </DialogContent>
+</MudDialog>
