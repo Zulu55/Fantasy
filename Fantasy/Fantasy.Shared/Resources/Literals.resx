@@ -396,4 +396,16 @@
   <data name="ERR009" xml:space="preserve">
     <value>The tournament Id is not valid</value>
   </data>
+  <data name="TournamentActive" xml:space="preserve">
+    <value>The tournament is active</value>
+  </data>
+  <data name="TournamentInactive" xml:space="preserve">
+    <value>The tournament is inactive</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Activate</value>
+  </data>
+  <data name="Deactivate" xml:space="preserve">
+    <value>Deactivate</value>
+  </data>
 </root>

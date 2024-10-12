@@ -79,6 +79,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Activate.
+        /// </summary>
+        public static string Activate {
+            get {
+                return ResourceManager.GetString("Activate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Admin.
         /// </summary>
         public static string Admin {
@@ -210,6 +219,15 @@ namespace Fantasy.Shared.Resources {
         public static string CurrentPassword {
             get {
                 return ResourceManager.GetString("CurrentPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deactivate.
+        /// </summary>
+        public static string Deactivate {
+            get {
+                return ResourceManager.GetString("Deactivate", resourceCulture);
             }
         }
         
@@ -840,6 +858,24 @@ namespace Fantasy.Shared.Resources {
         public static string Tournament {
             get {
                 return ResourceManager.GetString("Tournament", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tournament is active.
+        /// </summary>
+        public static string TournamentActive {
+            get {
+                return ResourceManager.GetString("TournamentActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The tournament is inactive.
+        /// </summary>
+        public static string TournamentInactive {
+            get {
+                return ResourceManager.GetString("TournamentInactive", resourceCulture);
             }
         }
         

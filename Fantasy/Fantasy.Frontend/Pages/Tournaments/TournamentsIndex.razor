@@ -1,0 +1,95 @@
+﻿@page "/tournaments"
+
+@if (loading)
+{
+    <Loading />
+}
+else
+{
+    <MudTable Items="@Tournaments"
+              @ref="table"
+              ServerData="LoadListAsync"
+              Dense="true"
+              Hover="true"
+              Striped="true"
+              FixedHeader="true"
+              FixedFooter="true">
+        <ToolBarContent>
+            <div class="d-flex justify-content-between">
+                <MudText Typo="Typo.h6" Class="me-4"> @Localizer["Tournaments"]</MudText>
+                <MudButton Variant="Variant.Outlined"
+                           EndIcon="@Icons.Material.Filled.Add"
+                           Color="Color.Info" OnClick="@(() => ShowModalAsync())">
+                    @Localizer["New"]
+                </MudButton>
+            </div>
+            <MudSpacer />
+            <FilterComponent ApplyFilter="SetFilterValue" />
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh>@Localizer["Tournament"]</MudTh>
+            <MudTh>@Localizer["Image"]</MudTh>
+            <MudTh>@Localizer["IsActive"]</MudTh>
+            <MudTh>@Localizer["Remarks"]</MudTh>
+            <MudTh>@Localizer["Actions"]</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd>@context.Name</MudTd>
+            <MudTd>
+                <MudImage Src="@context.ImageFull" Width="80" />
+            </MudTd>
+            <MudTd>
+                @if (context.IsActive)
+                {
+                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Color="Color.Success" />
+                }
+                else
+                {
+                    <MudIcon Icon="@Icons.Material.Filled.Cancel" Color="Color.Error" />
+                }
+            </MudTd>
+            <MudTd>@context.Remarks</MudTd>
+            <MudTd>
+                <MudTooltip Text="@Localizer["Teams"]">
+                    <MudButton Variant="Variant.Filled"
+                               EndIcon="@Icons.Material.Filled.SportsSoccer"
+                               Color="Color.Primary"
+                               OnClick="@(() => TeamsAction(@context))" style="width: 100px;">
+                        @context.TeamsCount
+                    </MudButton>
+                </MudTooltip>
+                @* <MudTooltip Text="@Localizer["Matches"]">
+                    <MudButton Variant="Variant.Filled"
+                               EndIcon="@Icons.Material.Filled.Sports"
+                               Color="Color.Success"
+                               OnClick="@(() => MatchesAction(@context))" style="width: 100px;">
+                        @context.MatchesCount
+                    </MudButton>
+                </MudTooltip> *@
+                <MudTooltip Text="@Localizer["Edit"]">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Warning"
+                               OnClick="@(() => ShowModalAsync(context.Id, true))">
+                        <MudIcon Icon="@Icons.Material.Filled.Edit" />
+                    </MudButton>
+                </MudTooltip>
+                <MudTooltip Text="@Localizer["Delete"]">
+                    <MudButton Variant="Variant.Filled"
+                               Color="Color.Error"
+                               OnClick="@(() => DeleteAsync(@context))">
+                        <MudIcon Icon="@Icons.Material.Filled.Delete" />
+                    </MudButton>
+                </MudTooltip>
+            </MudTd>
+        </RowTemplate>
+        <NoRecordsContent>
+            <MudText>@Localizer["NoRecords"]</MudText>
+        </NoRecordsContent>
+        <PagerContent>
+            <MudTablePager RowsPerPageString=@Localizer["RecordsNumber"]
+                           PageSizeOptions="pageSizeOptions"
+                           AllItemsText=@Localizer["All"]
+                           InfoFormat="@infoFormat" />
+        </PagerContent>
+    </MudTable>
+}

@@ -396,4 +396,16 @@
   <data name="ERR009" xml:space="preserve">
     <value>El código de torneo no es válido.</value>
   </data>
+  <data name="TournamentActive" xml:space="preserve">
+    <value>El torneo está activo</value>
+  </data>
+  <data name="TournamentInactive" xml:space="preserve">
+    <value>El torneo está inactivo</value>
+  </data>
+  <data name="Activate" xml:space="preserve">
+    <value>Activar</value>
+  </data>
+  <data name="Deactivate" xml:space="preserve">
+    <value>Desactivar</value>
+  </data>
 </root>
