@@ -417,4 +417,28 @@
   <data name="SelectATeam" xml:space="preserve">
     <value>-- Selecciona un Equipo --</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>Fecha</value>
+  </data>
+  <data name="Local" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="Visitor" xml:space="preserve">
+    <value>Visitante</value>
+  </data>
+  <data name="GoalsLocal" xml:space="preserve">
+    <value>Goles del Local</value>
+  </data>
+  <data name="GoalsVisitor" xml:space="preserve">
+    <value>Goles del Visitante</value>
+  </data>
+  <data name="ERR010" xml:space="preserve">
+    <value>El código del equipo local no es válido.</value>
+  </data>
+  <data name="ERR011" xml:space="preserve">
+    <value>El código del equipo visitante no es válido.</value>
+  </data>
+  <data name="ERR012" xml:space="preserve">
+    <value>El código del partido no es válido.</value>
+  </data>
 </root>

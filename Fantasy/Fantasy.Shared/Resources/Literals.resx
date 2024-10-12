@@ -417,4 +417,28 @@
   <data name="SelectATeam" xml:space="preserve">
     <value>-- Select a Team --</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="Local" xml:space="preserve">
+    <value>Local</value>
+  </data>
+  <data name="Visitor" xml:space="preserve">
+    <value>Visitor</value>
+  </data>
+  <data name="GoalsLocal" xml:space="preserve">
+    <value>Goals Local</value>
+  </data>
+  <data name="GoalsVisitor" xml:space="preserve">
+    <value>Goals Visitor</value>
+  </data>
+  <data name="ERR010" xml:space="preserve">
+    <value>The local Id is not valid.</value>
+  </data>
+  <data name="ERR011" xml:space="preserve">
+    <value>The visitor Id is not valid.</value>
+  </data>
+  <data name="ERR012" xml:space="preserve">
+    <value>The match Id is not valid.</value>
+  </data>
 </root>

@@ -55,10 +55,20 @@ public class SeedDb
             var barbados = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Barbados");
             var dominica = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Dominica");
 
+            var name = "Copa América - 2025";
+            var imagePath = string.Empty;
+            var filePath = $"{Environment.CurrentDirectory}\\Images\\Tournaments\\{name}.png";
+            if (File.Exists(filePath))
+            {
+                var fileBytes = File.ReadAllBytes(filePath);
+                imagePath = await _fileStorage.SaveFileAsync(fileBytes, "jpg", "tournaments");
+            }
+
             var copaAmerica = new Tournament
             {
                 IsActive = true,
-                Name = "Copa America - 2025",
+                Name = name,
+                Image = imagePath,
                 TournamentTeams =
                 [
                     new TournamentTeam { Team = colombia! },
@@ -73,13 +83,46 @@ public class SeedDb
                     new TournamentTeam { Team = paraguay! },
                     new TournamentTeam { Team = unitedStates! },
                     new TournamentTeam { Team = canada! },
+                ],
+                Matches =
+                [
+                    new Match { Date = DateTime.Today.AddDays(1).AddHours(18).ToUniversalTime(), IsActive = true, Local = colombia!, Visitor = peru! },
+                    new Match { Date = DateTime.Today.AddDays(1).AddHours(21).ToUniversalTime(), IsActive = true, Local = ecuador!, Visitor = canada! },
+                    new Match { Date = DateTime.Today.AddDays(2).AddHours(18).ToUniversalTime(), IsActive = true, Local = brazil!, Visitor = chile! },
+                    new Match { Date = DateTime.Today.AddDays(2).AddHours(21).ToUniversalTime(), IsActive = true, Local = bolivia!, Visitor = uruguay! },
+                    new Match { Date = DateTime.Today.AddDays(3).AddHours(18).ToUniversalTime(), IsActive = true, Local = argentina!, Visitor = unitedStates! },
+                    new Match { Date = DateTime.Today.AddDays(3).AddHours(21).ToUniversalTime(), IsActive = true, Local = venezuela!, Visitor = paraguay! },
+
+                    new Match { Date = DateTime.Today.AddDays(4).AddHours(18).ToUniversalTime(), IsActive = true, Local = canada!, Visitor = colombia! },
+                    new Match { Date = DateTime.Today.AddDays(4).AddHours(21).ToUniversalTime(), IsActive = true, Local = peru!, Visitor = ecuador! },
+                    new Match { Date = DateTime.Today.AddDays(5).AddHours(18).ToUniversalTime(), IsActive = true, Local = uruguay!, Visitor = chile! },
+                    new Match { Date = DateTime.Today.AddDays(5).AddHours(21).ToUniversalTime(), IsActive = true, Local = chile!, Visitor = bolivia! },
+                    new Match { Date = DateTime.Today.AddDays(6).AddHours(18).ToUniversalTime(), IsActive = true, Local = argentina!, Visitor = paraguay! },
+                    new Match { Date = DateTime.Today.AddDays(6).AddHours(21).ToUniversalTime(), IsActive = true, Local = unitedStates!, Visitor = venezuela! },
+
+                    new Match { Date = DateTime.Today.AddDays(7).AddHours(19).ToUniversalTime(), IsActive = true, Local = peru!, Visitor = canada! },
+                    new Match { Date = DateTime.Today.AddDays(7).AddHours(19).ToUniversalTime(), IsActive = true, Local = colombia!, Visitor = ecuador! },
+                    new Match { Date = DateTime.Today.AddDays(8).AddHours(19).ToUniversalTime(), IsActive = true, Local = chile!, Visitor = uruguay! },
+                    new Match { Date = DateTime.Today.AddDays(8).AddHours(19).ToUniversalTime(), IsActive = true, Local = bolivia!, Visitor = brazil! },
+                    new Match { Date = DateTime.Today.AddDays(9).AddHours(19).ToUniversalTime(), IsActive = true, Local = unitedStates!, Visitor = paraguay! },
+                    new Match { Date = DateTime.Today.AddDays(9).AddHours(19).ToUniversalTime(), IsActive = true, Local = argentina!, Visitor = venezuela! },
                 ]
             };
+
+            name = "Copa Oro - 2025";
+            imagePath = string.Empty;
+            filePath = $"{Environment.CurrentDirectory}\\Images\\Tournaments\\{name}.png";
+            if (File.Exists(filePath))
+            {
+                var fileBytes = File.ReadAllBytes(filePath);
+                imagePath = await _fileStorage.SaveFileAsync(fileBytes, "jpg", "tournaments");
+            }
 
             var copaOro = new Tournament
             {
                 IsActive = true,
-                Name = "Copa Oro - 2025",
+                Name = name,
+                Image = imagePath,
                 TournamentTeams =
                 [
                     new TournamentTeam { Team = unitedStates! },

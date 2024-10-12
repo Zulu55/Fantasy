@@ -11,6 +11,7 @@ public class DataContext : IdentityDbContext<User>
     }
 
     public DbSet<Country> Countries { get; set; }
+    public DbSet<Match> Matches { get; set; }
     public DbSet<Team> Teams { get; set; }
     public DbSet<Tournament> Tournaments { get; set; }
     public DbSet<TournamentTeam> TournamentTeams { get; set; }
