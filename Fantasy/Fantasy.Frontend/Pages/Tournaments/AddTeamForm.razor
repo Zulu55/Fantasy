@@ -1,0 +1,49 @@
+﻿<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+
+<EditForm EditContext="editContext" OnValidSubmit="OnValidSubmit">
+    <DataAnnotationsValidator />
+
+    <MudAutocomplete T="Country"
+                     Label=@Localizer["Country"]
+                     Placeholder=@Localizer["SelectACountry"]
+                     SearchFunc="SearchCountry"
+                     Value="selectedCountry"
+                     ValueChanged="CountryChangedAsync"
+                     ToStringFunc="@(e=> e==null?null : $"{e.Name}")"
+                     Class="mb-2">
+        <ItemTemplate Context="itemContext">
+            @itemContext.Name
+        </ItemTemplate>
+    </MudAutocomplete>
+
+    <MudAutocomplete T="Team"
+                     Label=@Localizer["Team"]
+                     Placeholder=@Localizer["SelectATeam"]
+                     SearchFunc="SearchTeam"
+                     Value="selectedTeam"
+                     ValueChanged="TeamChanged"
+                     ToStringFunc="@(e=> e==null?null : $"{e.Name}")"
+                     Class="mb-2">
+        <ItemTemplate Context="itemContext">
+            @itemContext.Name
+        </ItemTemplate>
+    </MudAutocomplete>
+
+    <div class="mb-2">
+        <MudImage Src="@imageUrl" Width="90" Height="60" />
+    </div>
+
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.ArrowBack"
+               Color="Color.Info"
+               OnClick="ReturnAction">
+        @Localizer["Return"]
+    </MudButton>
+
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.Check"
+               Color="Color.Primary"
+               ButtonType="ButtonType.Submit">
+        @Localizer["SaveChanges"]
+    </MudButton>
+</EditForm>

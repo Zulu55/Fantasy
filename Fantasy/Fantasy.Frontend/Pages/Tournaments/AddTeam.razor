@@ -1,3 +1,15 @@
-﻿<h3>AddTeam</h3>
-
-
+﻿@if (tournamentTeamDTO is null)
+{
+    <Loading />
+}
+else
+{
+    <MudDialog>
+        <DialogContent>
+            <AddTeamForm @ref="addTeamForm" 
+                         TournamentTeamDTO="tournamentTeamDTO" 
+                         OnValidSubmit="AddAsync" 
+                         ReturnAction="Return" />
+        </DialogContent>
+    </MudDialog>
+}

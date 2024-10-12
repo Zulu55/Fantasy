@@ -414,4 +414,7 @@
   <data name="AddTeam" xml:space="preserve">
     <value>Adicionar Equipo</value>
   </data>
+  <data name="SelectATeam" xml:space="preserve">
+    <value>-- Selecciona un Equipo --</value>
+  </data>
 </root>
