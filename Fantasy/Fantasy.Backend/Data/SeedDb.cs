@@ -26,6 +26,81 @@ public class SeedDb
         await CheckTeamsAsync();
         await CheckRolesAsync();
         await CheckUserAsync("Juan", "Zuluaga", "zulu@yopmail.com", "322 311 4620", UserType.Admin);
+        await CheckTournamentsAsync();
+    }
+
+    private async Task CheckTournamentsAsync()
+    {
+        if (!_context.TournamentTeams.Any())
+        {
+            var colombia = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Colombia")!;
+            var peru = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Peru");
+            var ecuador = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Ecuador");
+            var venezuela = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Venezuela");
+            var brazil = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Brazil");
+            var argentina = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Argentina");
+            var uruguay = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Uruguay");
+            var chile = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Chile");
+            var bolivia = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Bolivia");
+            var paraguay = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Paraguay");
+
+            var unitedStates = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "United States");
+            var canada = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Canada");
+            var mexico = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Mexico");
+            var panama = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Panama");
+            var costaRica = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Costa Rica ");
+            var honduras = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Honduras");
+            var jamaica = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Jamaica");
+            var guatemala = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Guatemala");
+            var barbados = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Barbados");
+            var dominica = await _context.Teams.FirstOrDefaultAsync(x => x.Name == "Dominica");
+
+            var copaAmerica = new Tournament
+            {
+                IsActive = true,
+                Name = "Copa America - 2025",
+                TournamentTeams =
+                [
+                    new TournamentTeam { Team = colombia! },
+                    new TournamentTeam { Team = peru! },
+                    new TournamentTeam { Team = ecuador! },
+                    new TournamentTeam { Team = venezuela! },
+                    new TournamentTeam { Team = brazil! },
+                    new TournamentTeam { Team = argentina! },
+                    new TournamentTeam { Team = uruguay! },
+                    new TournamentTeam { Team = chile! },
+                    new TournamentTeam { Team = bolivia! },
+                    new TournamentTeam { Team = paraguay! },
+                    new TournamentTeam { Team = unitedStates! },
+                    new TournamentTeam { Team = canada! },
+                ]
+            };
+
+            var copaOro = new Tournament
+            {
+                IsActive = true,
+                Name = "Copa Oro - 2025",
+                TournamentTeams =
+                [
+                    new TournamentTeam { Team = unitedStates! },
+                    new TournamentTeam { Team = canada! },
+                    new TournamentTeam { Team = mexico! },
+                    new TournamentTeam { Team = panama! },
+                    new TournamentTeam { Team = costaRica! },
+                    new TournamentTeam { Team = honduras! },
+                    new TournamentTeam { Team = jamaica! },
+                    new TournamentTeam { Team = guatemala! },
+                    new TournamentTeam { Team = barbados! },
+                    new TournamentTeam { Team = dominica! },
+                    new TournamentTeam { Team = colombia! },
+                    new TournamentTeam { Team = uruguay! },
+                ]
+            };
+
+            _context.Tournaments.Add(copaAmerica);
+            _context.Tournaments.Add(copaOro);
+            await _context.SaveChangesAsync();
+        }
     }
 
     private async Task CheckRolesAsync()

@@ -12,12 +12,16 @@ public class DataContext : IdentityDbContext<User>
 
     public DbSet<Country> Countries { get; set; }
     public DbSet<Team> Teams { get; set; }
+    public DbSet<Tournament> Tournaments { get; set; }
+    public DbSet<TournamentTeam> TournamentTeams { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<Country>().HasIndex(x => x.Name).IsUnique();
         modelBuilder.Entity<Team>().HasIndex(x => new { x.CountryId, x.Name }).IsUnique();
+        modelBuilder.Entity<Tournament>().HasIndex(x => x.Name).IsUnique();
+        modelBuilder.Entity<TournamentTeam>().HasIndex(x => new { x.TournamentId, x.TeamId }).IsUnique();
         DisableCascadingDelete(modelBuilder);
     }
 

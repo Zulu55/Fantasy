@@ -381,4 +381,19 @@
   <data name="ForgottenYourPassword" xml:space="preserve">
     <value>¿Has olvidado tu contraseña?</value>
   </data>
+  <data name="Tournament" xml:space="preserve">
+    <value>Torneo</value>
+  </data>
+  <data name="Tournaments" xml:space="preserve">
+    <value>Torneos</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>¿Está activo?</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Comentarios</value>
+  </data>
+  <data name="ERR009" xml:space="preserve">
+    <value>El código de torneo no es válido.</value>
+  </data>
 </root>
