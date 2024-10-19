@@ -88,6 +88,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Match To Tournament.
+        /// </summary>
+        public static string AddMatchToTournament {
+            get {
+                return ResourceManager.GetString("AddMatchToTournament", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Team.
         /// </summary>
         public static string AddTeam {
@@ -588,6 +597,24 @@ namespace Fantasy.Shared.Resources {
         public static string MailForwarding {
             get {
                 return ResourceManager.GetString("MailForwarding", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Match.
+        /// </summary>
+        public static string Match {
+            get {
+                return ResourceManager.GetString("Match", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Matches.
+        /// </summary>
+        public static string Matches {
+            get {
+                return ResourceManager.GetString("Matches", resourceCulture);
             }
         }
         
