@@ -450,4 +450,22 @@
   <data name="Matches" xml:space="preserve">
     <value>Partidos</value>
   </data>
+  <data name="MatchInactive" xml:space="preserve">
+    <value>El partido está inactivo</value>
+  </data>
+  <data name="MatchActive" xml:space="preserve">
+    <value>El partido está activo</value>
+  </data>
+  <data name="SelectDate" xml:space="preserve">
+    <value>Seleccione una fecha...</value>
+  </data>
+  <data name="SelectTime" xml:space="preserve">
+    <value>Seleccione una hora...</value>
+  </data>
+  <data name="MustSelectLocalTeam" xml:space="preserve">
+    <value>Debe seleccionar un equipo local.</value>
+  </data>
+  <data name="MustSelectVisitorTeam" xml:space="preserve">
+    <value>Debe seleccionar un equipo visitante.</value>
+  </data>
 </root>

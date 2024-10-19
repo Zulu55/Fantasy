@@ -1,0 +1,83 @@
+﻿<NavigationLock OnBeforeInternalNavigation="OnBeforeInternalNavigation" />
+
+<EditForm EditContext="editContext" OnSubmit="OnSubmitAsync">
+    <DataAnnotationsValidator />
+
+    <MudAutocomplete T="Team"
+                     Label=@Localizer["Local"]
+                     Placeholder=@Localizer["SelectATeam"]
+                     SearchFunc="SearchTeam"
+                     Value="selectedLocal"
+                     ValueChanged="LocalChanged"
+                     ToStringFunc="@(e=> e==null?null : $"{e.Name}")"
+                     Class="mb-2">
+        <ItemTemplate Context="itemContext">
+            @itemContext.Name
+        </ItemTemplate>
+    </MudAutocomplete>
+
+    <MudAutocomplete T="Team"
+                     Label=@Localizer["Visitor"]
+                     Placeholder=@Localizer["SelectATeam"]
+                     SearchFunc="SearchTeam"
+                     Value="selectedVisitor"
+                     ValueChanged="VisitorChanged"
+                     ToStringFunc="@(e=> e==null?null : $"{e.Name}")"
+                     Class="mb-2">
+        <ItemTemplate Context="itemContext">
+            @itemContext.Name
+        </ItemTemplate>
+    </MudAutocomplete>
+
+    <MudDatePicker Label=@Localizer["SelectDate"]
+                   Date="selectedDate"
+                   DateChanged="OnDateChanged"
+                   DateFormat="yyyy/MM/dd"
+                   Class="mb-2" />
+
+    <MudTimePicker Label=@Localizer["SelectTime"]
+                   Time="selectedTime"
+                   TimeChanged="OnTimeChanged"
+                   TimeFormat="HH:mm"
+                   AmPm="false"
+                   Class="mb-2" />
+
+    <MudToggleIconButton Toggled="MatchDTO.IsActive"
+                         ToggledChanged="OnToggledIsActiveChanged"
+                         Icon="@Icons.Material.Filled.Cancel"
+                         Color="@Color.Error"
+                         ToggledIcon="@Icons.Material.Filled.CheckCircle"
+                         ToggledColor="@Color.Success"
+                         title="@(MatchDTO.IsActive ? @Localizer["Deactivate"] : @Localizer["Activate"])" />
+    <span>@isActiveMessage</span>
+
+    <div style="display: flex; align-items: center; justify-content: center; margin-top: 30px; margin-bottom: 30px;">
+        <div class="mb-2" style="margin-right: 10px;">
+            @if (selectedLocal.Id != 0)
+            {
+                <MudImage Src="@imageUrlLocal" Width="120" Height="80" />
+            }
+        </div>
+        <MudText Typo="Typo.h3" Align="Align.Center" Class="mx-2">Vs</MudText>
+        <div class="mb-2" style="margin-left: 10px;">
+            @if (selectedVisitor.Id != 0)
+            {
+                <MudImage Src="@imageUrlVisitor" Width="120" Height="80" />
+            }
+        </div>
+    </div>
+
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.ArrowBack"
+               Color="Color.Info"
+               OnClick="ReturnAction">
+        @Localizer["Return"]
+    </MudButton>
+
+    <MudButton Variant="Variant.Outlined"
+               StartIcon="@Icons.Material.Filled.Check"
+               Color="Color.Primary"
+               ButtonType="ButtonType.Submit">
+        @Localizer["SaveChanges"]
+    </MudButton>
+</EditForm>

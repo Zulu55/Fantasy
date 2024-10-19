@@ -610,11 +610,29 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Match Active.
+        /// </summary>
+        public static string MatchActive {
+            get {
+                return ResourceManager.GetString("MatchActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Matches.
         /// </summary>
         public static string Matches {
             get {
                 return ResourceManager.GetString("Matches", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Match Inactive.
+        /// </summary>
+        public static string MatchInactive {
+            get {
+                return ResourceManager.GetString("MatchInactive", resourceCulture);
             }
         }
         
@@ -633,6 +651,24 @@ namespace Fantasy.Shared.Resources {
         public static string MinLength {
             get {
                 return ResourceManager.GetString("MinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must select a local team..
+        /// </summary>
+        public static string MustSelectLocalTeam {
+            get {
+                return ResourceManager.GetString("MustSelectLocalTeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You must select a visitor team..
+        /// </summary>
+        public static string MustSelectVisitorTeam {
+            get {
+                return ResourceManager.GetString("MustSelectVisitorTeam", resourceCulture);
             }
         }
         
@@ -907,11 +943,29 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select a Date....
+        /// </summary>
+        public static string SelectDate {
+            get {
+                return ResourceManager.GetString("SelectDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select a file....
         /// </summary>
         public static string SelectFile {
             get {
                 return ResourceManager.GetString("SelectFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a Time....
+        /// </summary>
+        public static string SelectTime {
+            get {
+                return ResourceManager.GetString("SelectTime", resourceCulture);
             }
         }
         
