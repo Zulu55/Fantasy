@@ -25,8 +25,94 @@ public class SeedDb
         await CheckCountriesAsync();
         await CheckTeamsAsync();
         await CheckRolesAsync();
-        await CheckUserAsync("Juan", "Zuluaga", "zulu@yopmail.com", "322 311 4620", UserType.Admin);
+        await CheckUsersAsync();
         await CheckTournamentsAsync();
+        await CheckGroupsAsync();
+    }
+
+    private async Task CheckUsersAsync()
+    {
+        await CheckUserAsync("Juan", "Zuluaga", "zulu@yopmail.com", "322 311 4620", "JuanZuluaga.jpg", UserType.Admin);
+        await CheckUserAsync("Ledys", "Bedoya", "ledys@yopmail.com", "322 311 4620", "LedysBedoya.jpg", UserType.User);
+        await CheckUserAsync("Brad", "Pitt", "brad@yopmail.com", "322 311 4620", "Brad.jpg", UserType.User);
+        await CheckUserAsync("Angelina", "Jolie", "angelina@yopmail.com", "322 311 4620", "Angelina.jpg", UserType.User);
+        await CheckUserAsync("Bob", "Marley", "bob@yopmail.com", "322 311 4620", "bob.jpg", UserType.User);
+        await CheckUserAsync("Celia", "Cruz", "celia@yopmail.com", "322 311 4620", "celia.jpg", UserType.Admin);
+        await CheckUserAsync("Fredy", "Mercury", "fredy@yopmail.com", "322 311 4620", "fredy.jpg", UserType.User);
+        await CheckUserAsync("Hector", "Lavoe", "hector@yopmail.com", "322 311 4620", "hector.jpg", UserType.User);
+        await CheckUserAsync("Liv", "Taylor", "liv@yopmail.com", "322 311 4620", "liv.jpg", UserType.User);
+        await CheckUserAsync("Otep", "Shamaya", "otep@yopmail.com", "322 311 4620", "otep.jpg", UserType.User);
+        await CheckUserAsync("Ozzy", "Osbourne", "ozzy@yopmail.com", "322 311 4620", "ozzy.jpg", UserType.User);
+        await CheckUserAsync("Selena", "Quintanilla", "selena@yopmail.com", "322 311 4620", "selena.jpg", UserType.User);
+    }
+
+    private async Task CheckGroupsAsync()
+    {
+        if (!_context.Groups.Any())
+        {
+            var zulu = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "zulu@yopmail.com");
+            var ledys = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "ledys@yopmail.com");
+            var brad = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "brad@yopmail.com");
+            var angelina = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "angelina@yopmail.com");
+            var bob = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "bob@yopmail.com");
+            var celia = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "celia@yopmail.com");
+            var fredy = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "fredy@yopmail.com");
+            var hector = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "hector@yopmail.com");
+            var liv = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "liv@yopmail.com");
+            var otep = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "otep@yopmail.com");
+            var ozzy = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "ozzy@yopmail.com");
+            var selena = await _context.Users.FirstOrDefaultAsync(x => x.UserName == "selena@yopmail.com");
+
+            var copaAmerica = await _context.Tournaments.FirstOrDefaultAsync(x => x.Name == "Copa América - 2025");
+
+            var zuluGoup = new Group
+            {
+                Admin = zulu!,
+                Code = Guid.NewGuid().ToString().Substring(0, 6).ToUpper(),
+                Name = "Gupo Zulu Copa America",
+                Remarks = "Valor COP$50,000. Primer puesto 70% del premio, segundo puesto 30% del premio",
+                Tournament = copaAmerica!,
+                Image = copaAmerica?.Image,
+                IsActive = true,
+                Members =
+                [
+                    new UserGroup { IsActive = true, User = zulu! },
+                    new UserGroup { IsActive = true, User = ledys! },
+                    new UserGroup { IsActive = true, User = brad! },
+                    new UserGroup { IsActive = true, User = angelina! },
+                    new UserGroup { IsActive = true, User = bob! },
+                    new UserGroup { IsActive = true, User = celia! },
+                    new UserGroup { IsActive = true, User = fredy! },
+                    new UserGroup { IsActive = true, User = selena! },
+                ],
+            };
+            _context.Add(zuluGoup);
+
+            var selenaGoup = new Group
+            {
+                Admin = selena!,
+                Code = Guid.NewGuid().ToString().Substring(0, 6).ToUpper(),
+                Name = "Gupo Selena Copa America",
+                Remarks = "Valor USD$30.00. Primer puesto 80% del premio, segundo puesto 20% del premio",
+                Tournament = copaAmerica!,
+                Image = copaAmerica?.Image,
+                IsActive = true,
+                Members =
+                [
+                    new UserGroup { IsActive = true, User = zulu! },
+                    new UserGroup { IsActive = true, User = celia! },
+                    new UserGroup { IsActive = true, User = fredy! },
+                    new UserGroup { IsActive = true, User = hector! },
+                    new UserGroup { IsActive = true, User = liv! },
+                    new UserGroup { IsActive = true, User = otep! },
+                    new UserGroup { IsActive = true, User = ozzy! },
+                    new UserGroup { IsActive = true, User = selena! },
+                ],
+            };
+            _context.Add(selenaGoup);
+
+            await _context.SaveChangesAsync();
+        }
     }
 
     private async Task CheckTournamentsAsync()
@@ -152,11 +238,15 @@ public class SeedDb
         await _usersUnitOfWork.CheckRoleAsync(UserType.User.ToString());
     }
 
-    private async Task<User> CheckUserAsync(string firstName, string lastName, string email, string phone, UserType userType)
+    private async Task<User> CheckUserAsync(string firstName, string lastName, string email, string phone, string image, UserType userType)
     {
         var user = await _usersUnitOfWork.GetUserAsync(email);
         if (user == null)
         {
+            var filePath = $"{Environment.CurrentDirectory}\\Images\\users\\{image}";
+            var fileBytes = File.ReadAllBytes(filePath);
+            var imagePath = await _fileStorage.SaveFileAsync(fileBytes, "jpg", "users");
+
             var country = await _context.Countries.FirstOrDefaultAsync(x => x.Name == "Colombia");
             user = new User
             {
@@ -167,6 +257,7 @@ public class SeedDb
                 PhoneNumber = phone,
                 Country = country!,
                 UserType = userType,
+                Photo = imagePath
             };
 
             await _usersUnitOfWork.AddUserAsync(user, "123456");

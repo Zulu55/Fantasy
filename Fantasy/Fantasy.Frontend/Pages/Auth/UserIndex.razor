@@ -1,0 +1,58 @@
+﻿@page "/users"
+
+@if (loading)
+{
+    <Loading />
+}
+else
+{
+    <MudTable Items="@Users"
+              @ref="table"
+              ServerData="LoadListAsync"
+              Dense="true"
+              Hover="true"
+              Striped="true"
+              FixedHeader="true"
+              FixedFooter="true">
+        <ToolBarContent>
+            <div class="d-flex justify-content-between">
+                <MudText Typo="Typo.h6" Class="me-4">@Localizer["Users"]</MudText>
+                <MudButton Variant="Variant.Outlined"
+                           EndIcon="@Icons.Material.Filled.Add"
+                           Color="Color.Info"
+                           Href="/register/?IsAdmin=true">
+                    @Localizer["Users"] @Localizer["Admin"]
+                </MudButton>
+            </div>
+            <MudSpacer />
+            <FilterComponent ApplyFilter="SetFilterValue" />
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh>@Localizer["Image"]</MudTh>
+            <MudTh>@Localizer["User"]</MudTh>
+            <MudTh>@Localizer["PhoneNumber"]</MudTh>
+            <MudTh>@Localizer["Email"]</MudTh>
+            <MudTh>@Localizer["Confirmed"]</MudTh>
+            <MudTh>@Localizer["UserType"]</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd>
+                <MudImage Src="@context.PhotoFull" Width="80" Height="80" Style="border-radius: 50%;" />
+            </MudTd>
+            <MudTd>@context.FullName</MudTd>
+            <MudTd>@context.PhoneNumber</MudTd>
+            <MudTd>@context.Email</MudTd>
+            <MudTd>@context.EmailConfirmed</MudTd>
+            <MudTd>@context.UserType</MudTd>
+        </RowTemplate>
+        <NoRecordsContent>
+            <MudText>@Localizer["NoRecords"]</MudText>
+        </NoRecordsContent>
+        <PagerContent>
+            <MudTablePager RowsPerPageString=@Localizer["RecordsNumber"]
+                           PageSizeOptions="pageSizeOptions"
+                           AllItemsText=@Localizer["All"]
+                           InfoFormat="@infoFormat" />
+        </PagerContent>
+    </MudTable>
+}
