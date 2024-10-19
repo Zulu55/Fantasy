@@ -32,4 +32,8 @@ public class User : IdentityUser
 
     [Display(Name = "User", ResourceType = typeof(Literals))]
     public string FullName => $"{FirstName} {LastName}";
+
+    public ICollection<Group>? GroupsManaged { get; set; }
+
+    public ICollection<UserGroup>? GroupsBelong { get; set; }
 }

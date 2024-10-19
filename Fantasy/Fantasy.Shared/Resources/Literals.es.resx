@@ -468,4 +468,13 @@
   <data name="MustSelectVisitorTeam" xml:space="preserve">
     <value>Debe seleccionar un equipo visitante.</value>
   </data>
+  <data name="Group" xml:space="preserve">
+    <value>Grupo</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Grupos</value>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Código</value>
+  </data>
 </root>
