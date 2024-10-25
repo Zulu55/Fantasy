@@ -76,6 +76,9 @@ builder.Services.AddScoped<ITournamentsUnitOfWork, TournamentsUnitOfWork>();
 builder.Services.AddScoped<ITournamentTeamsRepository, TournamentTeamsRepository>();
 builder.Services.AddScoped<ITournamentTeamsUnitOfWork, TournamentTeamsUnitOfWork>();
 
+builder.Services.AddScoped<IUserGroupsRepository, UserGroupsRepository>();
+builder.Services.AddScoped<IUserGroupsUnitOfWork, UserGroupsUnitOfWork>();
+
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUsersUnitOfWork, UsersUnitOfWork>();
 

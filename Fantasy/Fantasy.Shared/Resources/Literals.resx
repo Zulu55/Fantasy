@@ -492,4 +492,7 @@
   <data name="ERR014" xml:space="preserve">
     <value>The group Id is not valid.</value>
   </data>
+  <data name="ERR015" xml:space="preserve">
+    <value>The user group is not valid.</value>
+  </data>
 </root>

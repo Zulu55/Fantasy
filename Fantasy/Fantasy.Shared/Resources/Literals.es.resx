@@ -492,4 +492,7 @@
   <data name="ERR014" xml:space="preserve">
     <value>El código del grupo no es válido.</value>
   </data>
+  <data name="ERR015" xml:space="preserve">
+    <value>El códio de usario grupo no es válido.</value>
+  </data>
 </root>
