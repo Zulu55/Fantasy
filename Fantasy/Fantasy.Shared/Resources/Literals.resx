@@ -486,4 +486,10 @@
   <data name="Confirmed" xml:space="preserve">
     <value>Confirmed</value>
   </data>
+  <data name="ERR013" xml:space="preserve">
+    <value>The user Id is not valid.</value>
+  </data>
+  <data name="ERR014" xml:space="preserve">
+    <value>The group Id is not valid.</value>
+  </data>
 </root>

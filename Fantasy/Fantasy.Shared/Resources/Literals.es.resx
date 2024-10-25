@@ -486,4 +486,10 @@
   <data name="Confirmed" xml:space="preserve">
     <value>Confirmado</value>
   </data>
+  <data name="ERR013" xml:space="preserve">
+    <value>El código de usuario no es válido.</value>
+  </data>
+  <data name="ERR014" xml:space="preserve">
+    <value>El código del grupo no es válido.</value>
+  </data>
 </root>
