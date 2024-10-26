@@ -16,12 +16,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Literals.resx</DependentUpon>
     </Compile>
+    <Compile Update="Resources\Parameters.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Parameters.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="Resources\Literals.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Literals.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Parameters.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Parameters.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

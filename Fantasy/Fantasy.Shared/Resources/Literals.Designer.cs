@@ -88,6 +88,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        public static string Active {
+            get {
+                return ResourceManager.GetString("Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add.
         /// </summary>
         public static string Add {
@@ -237,6 +246,15 @@ namespace Fantasy.Shared.Resources {
         public static string ConfirmEmailMessage {
             get {
                 return ResourceManager.GetString("ConfirmEmailMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy Invitation URL.
+        /// </summary>
+        public static string CopyInvitationURLTitle {
+            get {
+                return ResourceManager.GetString("CopyInvitationURLTitle", resourceCulture);
             }
         }
         
@@ -556,6 +574,24 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Group: {0} has been created, with code: {1}, please send the group code to people who want to join this group. .
+        /// </summary>
+        public static string GroupCreated {
+            get {
+                return ResourceManager.GetString("GroupCreated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Group Details.
+        /// </summary>
+        public static string GroupDetails {
+            get {
+                return ResourceManager.GetString("GroupDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Groups.
         /// </summary>
         public static string Groups {
@@ -592,11 +628,29 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        public static string Inactive {
+            get {
+                return ResourceManager.GetString("Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Active?.
         /// </summary>
         public static string IsActive {
             get {
                 return ResourceManager.GetString("IsActive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Join Group.
+        /// </summary>
+        public static string JoinGroup {
+            get {
+                return ResourceManager.GetString("JoinGroup", resourceCulture);
             }
         }
         
@@ -727,6 +781,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Members.
+        /// </summary>
+        public static string Members {
+            get {
+                return ResourceManager.GetString("Members", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The {0} field must have at least {1} characters..
         /// </summary>
         public static string MinLength {
@@ -754,6 +817,15 @@ namespace Fantasy.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to My Groups.
+        /// </summary>
+        public static string MyGroups {
+            get {
+                return ResourceManager.GetString("MyGroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New.
         /// </summary>
         public static string New {
@@ -777,6 +849,15 @@ namespace Fantasy.Shared.Resources {
         public static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are not part of any group. You can join a group using the URL or code shared by the group administrator, or you can view the available groups on the homepage and then ask the administrator to activate you so you can enter your predictions. You can also create your own group of friends..
+        /// </summary>
+        public static string NoGroups {
+            get {
+                return ResourceManager.GetString("NoGroups", resourceCulture);
             }
         }
         
@@ -1029,6 +1110,15 @@ namespace Fantasy.Shared.Resources {
         public static string SelectATeam {
             get {
                 return ResourceManager.GetString("SelectATeam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -- Select a Tournament --.
+        /// </summary>
+        public static string SelectATournament {
+            get {
+                return ResourceManager.GetString("SelectATournament", resourceCulture);
             }
         }
         

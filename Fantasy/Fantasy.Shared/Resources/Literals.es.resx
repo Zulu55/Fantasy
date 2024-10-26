@@ -501,4 +501,34 @@
   <data name="Points" xml:space="preserve">
     <value>Puntos</value>
   </data>
+  <data name="Members" xml:space="preserve">
+    <value>Miembros</value>
+  </data>
+  <data name="GroupDetails" xml:space="preserve">
+    <value>Detalles de Grupo</value>
+  </data>
+  <data name="JoinGroup" xml:space="preserve">
+    <value>Unirme a un grupo</value>
+  </data>
+  <data name="MyGroups" xml:space="preserve">
+    <value>Mis Grupos</value>
+  </data>
+  <data name="NoGroups" xml:space="preserve">
+    <value>No perteneces a ningún grupo. Puedes unirte a uno con la URL o el código compartido por el administrador del grupo, o bien, ver los grupos disponibles en la página de inicio y luego pedirle al administrador que te active para poder ingresar tus predicciones. También puedes crear tu propio grupo de amigos.</value>
+  </data>
+  <data name="CopyInvitationURLTitle" xml:space="preserve">
+    <value>Copiar enlace de invitación al gupo</value>
+  </data>
+  <data name="Inactive" xml:space="preserve">
+    <value>Inactivo</value>
+  </data>
+  <data name="SelectATournament" xml:space="preserve">
+    <value>-- Seleccione un Torneo --</value>
+  </data>
+  <data name="GroupCreated" xml:space="preserve">
+    <value>Se ha creado el grupo: {0}, con el código: {1}, por favor envíe el código del grupo a las personas que deseen uniserse a este grupo.</value>
+  </data>
+  <data name="Active" xml:space="preserve">
+    <value>Activo</value>
+  </data>
 </root>
