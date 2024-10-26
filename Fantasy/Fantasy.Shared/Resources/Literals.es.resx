@@ -495,4 +495,10 @@
   <data name="ERR015" xml:space="preserve">
     <value>El códio de usario grupo no es válido.</value>
   </data>
+  <data name="ERR016" xml:space="preserve">
+    <value>El código de la predicción no es válido.</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Puntos</value>
+  </data>
 </root>

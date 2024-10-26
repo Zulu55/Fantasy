@@ -1,10 +1,5 @@
 ﻿using Fantasy.Shared.Resources;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Fantasy.Shared.Entites;
 
