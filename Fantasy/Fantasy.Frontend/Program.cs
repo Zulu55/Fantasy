@@ -13,7 +13,9 @@ var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
-builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri("https://localhost:7091") });
+var urlProd = "https://fantasybackend.azurewebsites.net/";
+var urlLocal = "https://localhost:7091";
+builder.Services.AddSingleton(sp => new HttpClient { BaseAddress = new Uri(urlProd) });
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddLocalization();
 builder.Services.AddSweetAlert2();

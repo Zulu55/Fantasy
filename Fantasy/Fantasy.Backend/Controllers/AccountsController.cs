@@ -33,6 +33,12 @@ public class AccountsController : ControllerBase
         _fileStorage = fileStorage;
     }
 
+    [HttpOptions]
+    public IActionResult HandlePreflight()
+    {
+        return Ok();
+    }
+
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     [HttpGet("paginated")]
     public async Task<IActionResult> GetAsync([FromQuery] PaginationDTO pagination)
